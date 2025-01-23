@@ -1,0 +1,8 @@
+flowchart TB
+    a{"FORM"} --> b[/"Enter data"/]
+    b --> c{"NAVEGATOR"}
+    c --> e[/"Send data"/]
+    e -- HTTP POST --> URL["URL"]
+    URL --> f{"SERVER"}
+    f -- HTTP GET --> g[/"Reload the page"/]
+    g --> h("See the new data")
