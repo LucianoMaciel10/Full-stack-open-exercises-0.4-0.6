@@ -1,0 +1,10 @@
+graph TD
+    User[New note]
+    Browser[Browser sends a POST request to the server with the note]
+    Server[Server stores the note and responds with success]
+    BrowserUpdate[Browser updates the UI dynamically to show the new note]
+
+    User -->|Enters note and submits form| Browser
+    Browser -->|POST /new_note| Server
+    Server -->|201 Created| Browser
+    Browser -->|Updates UI with new note without reloading| BrowserUpdate
