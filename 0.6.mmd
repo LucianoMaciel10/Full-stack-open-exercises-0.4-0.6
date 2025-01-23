@@ -5,6 +5,6 @@ graph TD
     BrowserUpdate[Browser updates the UI dynamically to show the new note]
 
     User -->|Enters note and submits form| Browser
-    Browser -->|POST /new_note| Server
+    Browser -->|POST /new_note_spa| Server
     Server -->|201 Created| Browser
     Browser -->|Updates UI with new note without reloading| BrowserUpdate
