@@ -1,0 +1,9 @@
+graph TD
+    User[User accesses]
+    User -->|Request| Server[Web Server]
+    Server -->|Responds with index.html| Browser[Browser]
+    Browser -->|Parses index.html| JS[JavaScript and SPA Logic]
+    JS -->|Request| ServerData[Server API]
+    ServerData -->|Responds with JSON data| JS
+    JS -->|Renders content dynamically| DOM[DOM Updates]
+    DOM --> User
