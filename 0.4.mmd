@@ -1,8 +1,6 @@
-flowchart TB
-    a{"FORM"} --> b[/"Enter data"/]
-    b --> c{"NAVEGATOR"}
-    c --> e[/"Send data"/]
-    e -- HTTP POST --> URL["URL"]
-    URL --> f{"SERVER"}
-    f -- HTTP GET --> g[/"Reload the page"/]
-    g --> h("See the new data")
+graph TD
+    User[New note] --> Browser[Browser sends a POST request to the server with the note data]
+    Browser -->|POST /new_note| Server[Server processes the request and stores the note]
+    Server -->|Response: Redirect or Confirmation| Browser[Browser receives a response and triggers a page reload]
+    Browser -->|GET /notes| Server
+    Server -->|Response: Updated page with new note| Browser[Browser renders the updated page with the new note displayed]
